@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para meu amor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="contador">  
+        <p>Já são</p>
+        <div class="counter" id="loveCounter"></div>
+        <p>ao seu lado</p>
+    </div>
+
+    <div class="card">
+        <img src="eu_e_mari.jpg" alt="Nós dois">
+        <p>
+            Quero que saiba que cada dia que passa eu amo mais você. 
+            Talvez pense que já não sinto o mesmo que antes... e realmente é verdade.<br><br>
+            O que sinto por você é muito maior do que antes. Eu quero ser o seu marido, 
+            seu melhor amigo, seu parceiro em todas as horas. Que possamos passar o resto de nossas vidas juntos, 
+            criando uma família linda e cheia de amor. 💖
+        </p>
+    </div>
+
+    <script>
+  function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = `${Math.random() * window.innerWidth}px`;
+      heart.style.fontSize = `${Math.random() * 40 + 10}px`;
+      document.body.appendChild(heart);
+
+      // Remover coração após a animação
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+
+    // Criar corações automaticamente ao carregar a página
+    const interval = setInterval(createHeart, 200);
+    setTimeout(() => clearInterval(interval), 6000); // Parar após 6 segundos
+
+        const startDate = new Date('2023-01-13T00:00:00');
+    
+        function updateCounter() {
+            const now = new Date();
+            const timeDifference = now - startDate;
+    
+            const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+    
+            document.getElementById('loveCounter').textContent = 
+                `${hours} h, ${minutes} min e ${seconds} s`;
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+    </script>
+</body>
+</html>
