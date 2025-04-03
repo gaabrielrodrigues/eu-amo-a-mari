@@ -23,13 +23,13 @@ display: inline-block;
 
 .contador p {
 margin: 0;
-font-size: 15px;
+font-size: 16px;
 color: #d45e7c;
 font-weight: bold;
 }
 
 .counter {
-font-size: 17px;
+font-size: 18px;
 font-weight: 700;
 color: #333;
 margin: 10px 0;
